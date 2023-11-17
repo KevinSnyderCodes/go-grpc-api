@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package hello.v1;
+
+import "google/protobuf/timestamp.proto";
+
+message GreetRequest {
+  optional string name = 1;
+}
+
+message GreetResponse {
+  string greeting = 1;
+  google.protobuf.Timestamp created_at = 2;
+}
+
+service HelloService {
+  rpc Greet(GreetRequest) returns (GreetResponse) {}
+}
