@@ -6,4 +6,5 @@ An example gRPC API written in Go.
 
 - [x] Accept `port` as flag
 - [x] Add `Makefile`
-- [ ] Add `grpc-gateway`
+- [x] Add `grpc-gateway`
+- [ ] Fix `grpc-gateway` breaking gRPC requests (`buf curl` no longer works)

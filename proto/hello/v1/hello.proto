@@ -2,6 +2,7 @@ syntax = "proto3";
 
 package hello.v1;
 
+import "google/api/annotations.proto";
 import "google/protobuf/timestamp.proto";
 
 message GreetRequest {
@@ -14,5 +15,10 @@ message GreetResponse {
 }
 
 service HelloService {
-  rpc Greet(GreetRequest) returns (GreetResponse) {}
+  rpc Greet(GreetRequest) returns (GreetResponse) {
+    option (google.api.http) = {
+      post: "/v1/hello/greet"
+      body: "*"
+    };
+  }
 }

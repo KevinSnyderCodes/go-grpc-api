@@ -1,6 +1,7 @@
 version: v1
 deps:
   - buf.build/protocolbuffers/wellknowntypes
+  - buf.build/googleapis/googleapis
 breaking:
   use:
     - FILE

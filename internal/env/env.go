@@ -10,6 +10,36 @@ func Has(key string) bool {
 	return ok
 }
 
+func GetString(key string) (string, error) {
+	return os.Getenv(key), nil
+}
+
+func MustGetString(key string) string {
+	v, err := GetString(key)
+	if err != nil {
+		panic(err)
+	}
+
+	return v
+}
+
+func GetStringOrDefault(key string, value string) (string, error) {
+	if !Has(key) {
+		return value, nil
+	}
+
+	return GetString(key)
+}
+
+func MustGetStringOrDefault(key string, value string) string {
+	v, err := GetStringOrDefault(key, value)
+	if err != nil {
+		panic(err)
+	}
+
+	return v
+}
+
 func GetUint(key string) (uint, error) {
 	s := os.Getenv(key)
 
