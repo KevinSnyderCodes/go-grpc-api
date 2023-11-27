@@ -7,4 +7,5 @@ An example gRPC API written in Go.
 - [x] Accept `port` as flag
 - [x] Add `Makefile`
 - [x] Add `grpc-gateway`
-- [ ] Fix `grpc-gateway` breaking gRPC requests (`buf curl` no longer works)
+- [ ] Use `cmux` to serve gRPC and HTTP on same port (should fix gRPC not working)
+- [ ] Write E2E tests for gRPC and HTTP
